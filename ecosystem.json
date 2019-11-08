@@ -1,7 +1,7 @@
 {
   "apps": [{
     "name": "myweb",
-    "script": "npm start",
+    "script": "npm stop && npm start",
     "env": {
       "COMMON_VARIABLE": "true"
     },
