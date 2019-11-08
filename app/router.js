@@ -5,33 +5,33 @@
  */
 module.exports = app => {
   const { router, controller } = app;
-  app.model.sync({ force: true }).then(function(result) {
-    (async () => {
-      const aa = await app.model.Student.create({
-        sid: 's-' + 1234,
-        name: 'abc',
-        age: '17',
-        sex: '男',
-      });
-      const bb = await app.model.Course.create({
-        cid: '1104',
-        name: '物理',
-      });
-      await app.model.Course.create({
-        cid: '1101',
-        name: '英语',
-      });
-      await app.model.Course.create({
-        cid: '1102',
-        name: '语文',
-      });
-      await app.model.Course.create({
-        cid: '1103',
-        name: '数学',
-      });
-      bb.addStudent(aa);
-    })();
-  });
+  // app.model.sync({ force: true }).then(function(result) {
+  //   (async () => {
+  //     const aa = await app.model.Student.create({
+  //       sid: 's-' + 1234,
+  //       name: 'abc',
+  //       age: '17',
+  //       sex: '男',
+  //     });
+  //     const bb = await app.model.Course.create({
+  //       cid: '1104',
+  //       name: '物理',
+  //     });
+  //     await app.model.Course.create({
+  //       cid: '1101',
+  //       name: '英语',
+  //     });
+  //     await app.model.Course.create({
+  //       cid: '1102',
+  //       name: '语文',
+  //     });
+  //     await app.model.Course.create({
+  //       cid: '1103',
+  //       name: '数学',
+  //     });
+  //     bb.addStudent(aa);
+  //   })();
+  // });
 
   router.get('/student', controller.student.index);
   router.get('/student/add', controller.student.add);
